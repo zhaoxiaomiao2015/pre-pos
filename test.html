@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    var collection = [
+      "a", "a", "a",
+      "e", "e", "e", "e", "e", "e", "e",
+      "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h",
+      "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t",
+      "f", "f", "f", "f", "f", "f", "f", "f", "f",
+      "c", "c", "c", "c", "c", "c", "c", "c",
+      "g", "g", "g", "g", "g", "g", "g",
+      "b", "b", "b", "b", "b", "b",
+      "d", "d", "d", "d", "d"
+    ];
+
+    function count_same_elements(collection) {
+      var result = [];
+      //循环遍历所给数组
+      for( var i = 1; i < collection.length; i++){
+        var isExist = false;
+        //与结果数组中对比如果存在，则count++
+        for(var j = 1; j < result.length; j++){
+          if(collection[i] === result[j].key){
+              result[j].count++;
+              isExist = true;
+          }
+        }
+        if(!isExist){
+          //与结果数组中对比如果不在，则在结果数组追加
+          var temp = {};
+          temp.key = collection[i];
+          temp.count = 1;
+          result.push(temp);
+        }
+      }
+      console.log(result);
+      return result;
+    }
+    count_same_elements(collection = [
+      "a", "a", "a",
+      "e", "e", "e", "e", "e", "e", "e",
+      "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h",
+      "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t",
+      "f", "f", "f", "f", "f", "f", "f", "f", "f",
+      "c", "c", "c", "c", "c", "c", "c", "c",
+      "g", "g", "g", "g", "g", "g", "g",
+      "b", "b", "b", "b", "b", "b",
+      "d", "d", "d", "d", "d"
+    ]
+);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
